@@ -5,6 +5,8 @@
 #- name: running npm install
  # shell: npm install /var/lib/jenkins/workspace/devops
 #buid project
+- name: install dep
+  shell: npm install --save --legacy-peer-deps
 - name: build app
-  shell: ng build --prod && chmod 777 -R /var/lib/jenkins/workspace/devops/dist/
+  shell: ng build
 
