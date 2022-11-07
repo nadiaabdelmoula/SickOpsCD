@@ -6,4 +6,4 @@
     password: nadia123456789
 
 - name: Push the Docker image into the repo
-  shell: docker push nadiaabdelmoula/devops:latest
+  shell: docker push nadiaabdelmoula/devops
