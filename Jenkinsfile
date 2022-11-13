@@ -37,5 +37,25 @@ sh "ansible-playbook ansible/docker-registry.yml -i ansible/inventory/host.yml"
         }
 
          }
+         
+         
+         
+         
+         post {
+                success {
+                     mail to: "nadia.abdelmoula@esprit.tn",
+                     subject: "success",
+                     body: "success on job ${env.JOB_NAME}, Build Number: ${env.BUILD_NUMBER}, Build URL: ${env.BUILD_URL}"
+                }
+                failure {
+                    mail to: "nadia.abdelmoula@esprit.tn",
+                     subject: "Failure",
+                     body: "Failure on job ${env.JOB_NAME}, Build Number: ${env.BUILD_NUMBER}, Build URL: ${env.BUILD_URL} "     
+                }
+            }
+
+
+
+
          }
 
